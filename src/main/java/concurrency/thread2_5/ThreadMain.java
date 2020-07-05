@@ -16,12 +16,7 @@ public class ThreadMain {
         System.out.println("线程E是否为守护线程：" + threadE.isDaemon());
         System.out.println("线程main是否为守护线程：" + mainThread.isDaemon());
 
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("ss");
-            }
-        });
+        Thread thread = new Thread(() -> System.out.println("ss"));
         thread.start();
     }
 }
