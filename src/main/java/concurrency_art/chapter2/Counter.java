@@ -54,8 +54,8 @@ public class Counter {
                 break;
             }
         }
-        atomicI.getAndIncrement(); // 点开此方法，查看源代码，也是有一个循环，直到更新成功循环才终止，跟上面的方法本质是一样的
-        atomicI.incrementAndGet();
+        //atomicI.getAndIncrement(); // 点开此方法，查看源代码，也是有一个循环，直到更新成功循环才终止，跟上面的方法本质是一样的
+        //atomicI.incrementAndGet();
     }
 
     /**
