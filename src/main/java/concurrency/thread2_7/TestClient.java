@@ -2,8 +2,9 @@ package concurrency.thread2_7;
 
 public class TestClient extends Thread{
     private LocalVar localVar;
-    public TestClient(LocalVar localVar){
+    public TestClient(LocalVar localVar, String name){
         this.localVar = localVar;
+        this.setName(name);
     }
 
     public void run(){

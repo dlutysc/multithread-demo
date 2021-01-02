@@ -8,7 +8,8 @@ public class LocalVar {
 //        }
 //    };
 
-    private ThreadLocal<Integer> seqNum = ThreadLocal.withInitial(() -> 0);
+//    private ThreadLocal<Integer> seqNum = ThreadLocal.withInitial(() -> 0);
+    private NamedThreadLocal<Integer> seqNum = new NamedThreadLocal<>("ysc");
 
     public ThreadLocal<Integer> getThreadLocal(){
         return seqNum;
@@ -16,6 +17,10 @@ public class LocalVar {
 
     // 2:获取下一个序列值
     public int getNextNum(){
+        if (seqNum.get() == null) {
+            seqNum.set(0);
+        }
+        System.out.println(seqNum.toString());
         seqNum.set(seqNum.get() + 1);
         return seqNum.get();
     }
